@@ -11,5 +11,7 @@ app.use(express.json())
 //usar as rotas
 const cuidador = require('./routes/cuidador.routes')
 app.use('/cuidador', cuidador)
+const tutor = require('./routes/tutor.routes')
+app.use('/tutor', tutor)
 
 module.exports = app
