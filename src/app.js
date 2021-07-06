@@ -1,16 +1,16 @@
-const express = require('express')
-const app = express()
-const cors = require('cors')
+// const express = require('express')
+// const app = express()
+// const cors = require('cors')
 
-const db = require('../src/data/database')
-db.connect() 
+// const db = require('../src/data/database')
+// db.connect() 
 
-app.use(cors())
-app.use(express.json())
+// app.use(cors())
+// app.use(express.json())
 
-app.get('/', (req,res) => {
-    res.json({message: 'Deploy no heroku!'})
-})
+// app.get('/', (req,res) => {
+//     res.json({message: 'Deploy no heroku!'})
+// })
 
 // //usar as rotas
 // const cuidador = require('./routes/cuidador.routes')
