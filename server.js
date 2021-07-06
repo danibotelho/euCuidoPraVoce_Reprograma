@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const routerCuidador = require('./src/routes/cuidador.routes')
 
 const port = process.env.PORT || 8000
 const db = require('./src/data/database')
@@ -13,8 +12,6 @@ app.use(express.json())
 app.get('/', (req,res) => {
     res.json({message: 'Deploy no heroku!'})
 })
-
-app.post('/cadastrar' ,routerCuidador.post)
 
 const cuidador = require('./src/routes/cuidador.routes')
 app.use('/cuidador', cuidador)
