@@ -9,7 +9,7 @@ app.use(cors())
 app.use(express.json())
 
 app.get('/', (req,res) => {
-    res.json({messge: 'Deploy no heroku!'})
+    res.json({message: 'Deploy no heroku!'})
 })
 
 //usar as rotas
