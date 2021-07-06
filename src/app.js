@@ -12,10 +12,10 @@ app.get('/', (req,res) => {
     res.json({message: 'Deploy no heroku!'})
 })
 
-//usar as rotas
-const cuidador = require('./routes/cuidador.routes')
-app.use('/cuidador', cuidador)
-const tutor = require('./routes/tutor.routes')
-app.use('/tutor', tutor)
+// //usar as rotas
+// const cuidador = require('./routes/cuidador.routes')
+// app.use('/cuidador', cuidador)
+// const tutor = require('./routes/tutor.routes')
+// app.use('/tutor', tutor)
 
 module.exports = app
