@@ -1,5 +1,3 @@
-//const app = require('./src/app')
-
 const express = require('express')
 const app = express()
 const cors = require('cors')
@@ -15,5 +13,12 @@ app.get('/', (req,res) => {
     res.json({message: 'Deploy no heroku!'})
 })
 
+const cuidador = require('./src/routes/cuidador.routes')
+app.use('/cuidador', cuidador)
+const tutor = require('./src/routes/tutor.routes')
+app.use('/tutor', tutor)
+
 
 app.listen(port,()=>console.log(`Rodando na porta: ${port}`))
+
+
