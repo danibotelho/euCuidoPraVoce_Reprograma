@@ -6,7 +6,7 @@ const controller = require('../controllers/tutorController')
 router.post('/cadastrar', controller.criaTutor)
 
 //Ler todos os titulos -> GET -> find()
-router.get('/', controller.mostraTutores)
+router.get('/todos', controller.mostraTutores)
 //pesquisa pelo animal
 router.get('/animal', controller.mostraAnimal)
 

@@ -6,7 +6,7 @@ const controller = require('../controllers/cuidadorController')
 router.post('/cadastrar', controller.criaCuidador)
 
 //Ler todos os titulos -> GET -> find()
-router.get('/', controller.mostraCuidadores)
+router.get('/todos', controller.mostraCuidadores)
 //pesquisa pelo animal
 router.get('/animal', controller.mostraAnimal)
 //pesquisa pelo bairro e animal
