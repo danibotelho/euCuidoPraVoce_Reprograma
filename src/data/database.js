@@ -7,7 +7,7 @@ const connect = () => {
         useUnifiedTopology: true
     })
     .then(console.log('Database conectada com sucesso'))
-    .catch(err => console.error)
+    .catch(err => console.err)
 }
 
 module.exports = { connect }

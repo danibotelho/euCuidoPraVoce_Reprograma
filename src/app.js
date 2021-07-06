@@ -8,6 +8,10 @@ db.connect()
 app.use(cors())
 app.use(express.json())
 
+app.get('/', (req,res) => {
+    res.json({messge: 'Deploy no heroku!'})
+})
+
 //usar as rotas
 const cuidador = require('./routes/cuidador.routes')
 app.use('/cuidador', cuidador)
