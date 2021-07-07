@@ -13,6 +13,8 @@ db.connect()
 app.use('/cuidador', cuidador)
 app.use('/tutor', tutor)
 
-
+app.get('/', async (req,res) => {
+    res.json({message: 'Deploy no heroku!'})
+})
 
 module.exports = app
