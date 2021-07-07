@@ -7,7 +7,7 @@
 // estado: texto e obrigatorio
 // cidade: texto e obrigatorio
 // bairro:texto e obrigatorio
-// animaisAfinidade: texto e obrigatorio
+// animal: texto e obrigatorio
 // valorHora: number, obrigatorio
 // formaPag: texto, obrigatorio
 // descricao: texto e obrigatorio
@@ -64,6 +64,11 @@ const cuidadorSchema = new mongoose.Schema({
     descricao: {
         type: String,
         required: true
+    },
+    criadoEm:{
+        type: Date,
+        required: true,
+        default: new Date
     }
 })
 

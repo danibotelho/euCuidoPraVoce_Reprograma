@@ -16,7 +16,8 @@ const criaCuidador = async (req, res) => {
         animal: req.body.animal,
         valorHora: req.body.valorHora,
         formaPag: req.body.formaPag,
-        descricao: req.body.descricao
+        descricao: req.body.descricao,
+        criadoEm: req.body.criadoEm
             
     })
 
@@ -27,7 +28,9 @@ const criaCuidador = async (req, res) => {
 
     try {
         const novoCuidador = await cuidador.save()
-        res.status(201).json(novoCuidador)
+        res.status(201).json({novoCuidador,
+            message:"Cadastrado com sucesso."})
+
     }catch (err) {
         res.status(500).json({message: err.message})
     }
@@ -38,7 +41,7 @@ const mostraCuidadores = async (req, res) => {
         const cuidadores = await Cuidador.find()
         return res.status(200).send(cuidadores)
     } catch (err){
-        return res.status(500).json({message: err.message})
+        return res.status(404).json({message: err.message})
     }
     
  }
@@ -49,7 +52,7 @@ const mostraAnimal = async (req, res) => {
         const cuidador = await Cuidador.find({animal: req.query.animal})
         res.status(200).json(cuidador)
     } catch (err){
-        return res.status(500).json({message: err.message})
+        return res.status(404).json({message: err.message})
     }
     
 }
@@ -60,7 +63,7 @@ const mostraBairroAnimal = async (req, res) => {
         const cuidador = await Cuidador.find({bairro: req.query.bairro}&&{animal: req.query.animal})
         res.status(200).json(cuidador)
     } catch (err){
-        return res.status(500).json({message: err.message})
+        return res.status(404).json({message: err.message})
     }
     
 }
@@ -71,11 +74,10 @@ const mostraBairro = async (req, res) => {
         const cuidador = await Cuidador.find({bairro: req.query.bairro})
         res.status(200).json(cuidador)
     } catch (err){
-        return res.status(500).json({message: err.message})
+        return res.status(404).json({message: err.message})
     }
     
 }
-
 
 const atualizaCuidador = async (req, res)=> {
     const encontraCuidador = await Cuidador.findOne({cpf: req.query.cpf})
@@ -105,7 +107,9 @@ const atualizaCuidador = async (req, res)=> {
     }
     try {        
         const cuidadorAtualizado = await encontraCuidador.save()
-       res.status(200).json(cuidadorAtualizado)
+       res.status(200).json({cuidadorAtualizado,
+        message: "Cadasro Atualizado com Sucesso."
+    })
 
     } catch (err) {
         res.status(500).json({ message: err.message})
@@ -115,14 +119,14 @@ const atualizaCuidador = async (req, res)=> {
 const deleteCuidador = async (req, res) => {
     const encontraCuidador = await Cuidador.findOne({cpf: req.query.cpf})
 if(encontraCuidador == null) {
-    return res.status(404).json({message: 'Estudio não encontrado.'})
+    return res.status(404).json({message: 'Cuidador não encontrado.'})
 }
 
 try {
     await encontraCuidador.remove()
     res.status(200).json({message: 'Deletado com sucesso'})
 } catch (err) {
-    return res.status(400).json({message: err.message})
+    return res.status(500).json({message: err.message})
 }
 
 }

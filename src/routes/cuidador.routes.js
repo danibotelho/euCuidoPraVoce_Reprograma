@@ -2,21 +2,22 @@ const express = require('express')
 const router = express.Router()
 const controller = require('../controllers/cuidadorController')
 
-//Criar um titulo -> POST -> save()
+//Cadastra um Cuidador
 router.post('/cadastrar', controller.criaCuidador)
 
-//Ler todos os titulos -> GET -> find()
-router.get('/todos', controller.mostraCuidadores)
-//pesquisa pelo animal
+//Retorno todos os cuidadores
+router.get('/', controller.mostraCuidadores)
+//Retorna a pesquisa por animal
 router.get('/animal', controller.mostraAnimal)
-//pesquisa pelo bairro e animal
-router.get('/bairroAnimal', controller.mostraBairroAnimal)
-//pesquisa pelo bairro
+//Retorna a pesquisa por bairro
 router.get('/bairro', controller.mostraBairro)
+//Retorna a pesquisa por animal e bairro
+router.get('/bairroAnimal', controller.mostraBairroAnimal)
 
-//Atualiza o cadastro pelo CPF
+//Atualiza o cadastro do cuidador usando como parametro o CPF
 router.put('/atualizar', controller.atualizaCuidador)
-//Deleta pelo cadastro pelo CPF
+
+//Deleta o cadastro do cuidador usando como parametro o CPF
 router.delete('/delete', controller.deleteCuidador)
 
 module.exports = router

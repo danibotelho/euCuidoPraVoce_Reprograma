@@ -1,18 +1,19 @@
 {
-  "name": "projeto",
+  "name": "eu_cuido_pra_voce",
   "version": "1.0.0",
-  "description": "",
+  "description": "Sistema que liga tutores de animais que por algum motivo precisam de um cuidador para o seu bichinho.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.13.2",
-    "dotenv": "^10.0.0"
+    "nodemon": "^2.0.9"
   }
 }

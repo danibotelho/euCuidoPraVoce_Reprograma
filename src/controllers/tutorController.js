@@ -15,7 +15,9 @@ const criaTutor = async (req, res) => {
         bairro:req.body.bairro,
         animal: req.body.animal,
         qntsDias: req.body.qntsDias,
-        descricao: req.body.descricao
+        descricao: req.body.descricao,
+        cuidador: req.body.cuidador,
+        criadoEm: req.body.criadoEm
             
     })
 
@@ -26,7 +28,10 @@ const criaTutor = async (req, res) => {
 
     try {
         const novoTutor = await tutor.save()
-        res.status(201).json(novoTutor)
+        res.status(201).json({
+            novoTutor,
+            message:"Cadastrado com sucesso."
+           })
     }catch (err) {
         res.status(500).json({message: err.message})
     }
@@ -65,7 +70,6 @@ const mostraBairro = async (req, res) => {
     
 }
 
-
 const atualizaTutor = async (req, res)=> {
     const encontraTutor = await Tutor.findOne({cpf: req.query.cpf})
     if(encontraTutor == null) {
@@ -86,18 +90,20 @@ const atualizaTutor = async (req, res)=> {
     if (req.body.bairro != null) {
         encontraTutor.bairro = req.body.bairro
     } 
-    if (req.body.qntsDias != null) {
-        encontraTutor.qntsDias = req.body.qntsDias
-    }  
     if (req.body.animal != null) {
         encontraTutor.animal = req.body.animal
-    }      
+    } 
+    if (req.body.qntsDias != null) {
+        encontraTutor.qntsDias = req.body.qntsDias
+    }           
     if (req.body.descricao != null) {
         encontraTutor.descricao = req.body.descricao
     }
     try {        
         const tutorAtualizado = await encontraTutor.save()
-       res.status(200).json(tutorAtualizado)
+       res.status(200).json({tutorAtualizado,
+            message: "Cadasro Atualizado com Sucesso."
+        })
 
     } catch (err) {
         res.status(500).json({ message: err.message})
@@ -109,17 +115,14 @@ const deleteTutor = async (req, res) => {
 if(encontraTutor == null) {
     return res.status(404).json({message: 'Cadastro não encontrado.'})
 }
-
 try {
-    await encontraCuidador.remove()
+    await encontraTutor.remove()
     res.status(200).json({message: 'Cadastro Deletado'})
 } catch (err) {
     return res.status(400).json({message: err.message})
 }
 
 }
-
-
 
 module.exports = { 
     criaTutor,

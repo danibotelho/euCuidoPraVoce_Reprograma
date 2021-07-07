@@ -1,25 +1,7 @@
-const express = require('express')
-const app = express()
-const cors = require('cors')
-
-const port = process.env.PORT || 8000
-const db = require('./src/data/database')
-db.connect() 
-
-app.use(cors())
-app.use(express.json())
-
-app.get('/', (req,res) => {
-    res.json({message: 'Deploy no heroku!'})
-})
-
-const cuidador = require('./src/routes/cuidador.routes')
-app.use('/cuidador', cuidador)
-
-const tutor = require('./src/routes/tutor.routes')
-app.use('/tutor', tutor)
+const app = require('./src/app')
+const PORT = process.env.PORTA 
 
 
-app.listen(port,()=>console.log(`Rodando na porta: ${port}`))
+app.listen(PORT,()=>console.log(`Rodando na porta: ${PORT}`))
 
 

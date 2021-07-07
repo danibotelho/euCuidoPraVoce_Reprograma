@@ -1,13 +1,18 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
 
-const connect = () => {
-    mongoose.connect(process.env.DATABASE_URL,{
+
+const connect = async () => {
+  try{
+    await   mongoose.connect(process.env.DATABASE_URL_PROD,{
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
-    .then(console.log('Database conectada com sucesso'))
-    .catch(err => console.err)
-}
 
+    console.log('database conectada')
+
+  }catch (err){
+      console.log(err.message)
+  }
+}
 module.exports = { connect }

@@ -59,6 +59,11 @@ const tutorSchema = new mongoose.Schema({
     descricao: {
         type: String,
         required: true
+    },
+    criadoEm:{
+        type: Date,
+        required: true,
+        default: new Date
     }
 })
 
