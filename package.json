@@ -4,7 +4,7 @@
   "description": "Sistema que liga tutores de animais que por algum motivo precisam de um cuidador para o seu bichinho.",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
