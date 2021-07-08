@@ -84,9 +84,6 @@ const atualizaCuidador = async (req, res)=> {
     if(encontraCuidador == null) {
         return res.status(404).json({message: 'Cuidador não encontrado.'})
     }
-    if (req.body.nome != null) {
-        encontraCuidador.nome = req.body.nome
-    }
     if (req.body.telefone != null) {
         encontraCuidador.telefone = req.body.telefone
     }
@@ -98,7 +95,10 @@ const atualizaCuidador = async (req, res)=> {
     }
     if (req.body.bairro != null) {
         encontraCuidador.bairro = req.body.bairro
-    } 
+    }
+    if (req.body.animal != null) {
+        encontraCuidador.animal = req.body.animal
+    }
     if (req.body.valorHora != null) {
         encontraCuidador.valorHora = req.body.valorHora
     }       

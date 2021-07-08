@@ -75,9 +75,6 @@ const atualizaTutor = async (req, res)=> {
     if(encontraTutor == null) {
         return res.status(404).json({message: 'Cadastro não encontrado.'})
     }
-    if (req.body.nome != null) {
-        encontraTutor.nome = req.body.nome
-    }
     if (req.body.telefone != null) {
         encontraTutor.telefone = req.body.telefone
     }
