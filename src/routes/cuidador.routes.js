@@ -15,7 +15,7 @@ router.get('/bairro', controller.mostraBairro)
 router.get('/bairroAnimal', controller.mostraBairroAnimal)
 
 //Atualiza o cadastro do cuidador usando como parametro o CPF
-router.put('/atualizar', controller.atualizaCuidador)
+router.patch('/atualizar', controller.atualizaCuidador)
 
 //Deleta o cadastro do cuidador usando como parametro o CPF
 router.delete('/delete', controller.deleteCuidador)

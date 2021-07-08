@@ -15,7 +15,7 @@ router.get('/animal', controller.mostraAnimal)
 router.get('/bairro', controller.mostraBairro)
 
 //Atualiza o cadastro do tutor usando como parametro o CPF
-router.put('/atualizar', controller.atualizaTutor)
+router.patch('/atualizar', controller.atualizaTutor)
 //Deleta o cadastro do tutor usando como parametro o CPF
 router.delete('/delete', controller.deleteTutor)
 
