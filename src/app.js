@@ -14,7 +14,11 @@ app.use('/cuidador', cuidador)
 app.use('/tutor', tutor)
 
 app.get('/', async (req,res) => {
-    res.json({message: 'Deploy no heroku!'})
+    res.json({
+    "name": "eu_cuido_pra_voce",
+    "version": "1.0.0",
+    "description": "Sistema que liga tutores de animais que por algum motivo precisam de um cuidador para o seu bichinho."
+})
 })
 
 module.exports = app
