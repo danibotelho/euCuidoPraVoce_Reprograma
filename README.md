@@ -146,8 +146,8 @@ url - [https://eucuidopravoce.herokuapp.com/](https://eucuidopravoce.herokuapp.c
 		estado: "CE",
 		cidade: "Fortaleza",
 		bairro: "Damas",
-		animal: "Cobras",
-		valorHora: 70,
+		animal: "Cachorros",
+		valorHora: 35,
 		formaPag: "Pix, à vista",
 		descricao: "Lorem ipsum vivamus consectetur aenean rutrum",
 		__v: 0
