@@ -17,7 +17,7 @@ app.get('/', async (req,res) => {
     res.json({
     "name": "eu_cuido_pra_voce",
     "version": "1.0.0",
-    "description": "Sistema de interação entre totures e cuidadores de animais. "
+    "description": "Sistema de interação entre tutores e cuidadores de animais. "
 })
 })
 

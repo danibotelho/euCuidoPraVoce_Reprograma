@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Cuidador = require('../models/cuidador')
+const Cuidador = require('../models/cuidadorSchema')
 
  
 const criaCuidador = async (req, res) => {

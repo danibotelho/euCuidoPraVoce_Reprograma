@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Tutor = require('../models/tutor')
+const Tutor = require('../models/tutorSchema')
 
  
 const criaTutor = async (req, res) => {
