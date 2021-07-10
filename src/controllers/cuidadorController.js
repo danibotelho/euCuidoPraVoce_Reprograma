@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Cuidador = require('../models/cuidadorSchema')
+const Tutor = require('../models/tutorSchema')
 
  
 const criaCuidador = async (req, res) => {
@@ -44,7 +45,7 @@ const mostraCuidadores = async (req, res) => {
         return res.status(404).json({message: err.message})
     }
     
- }
+}
 
 const mostraAnimal = async (req, res) => {
 
@@ -60,12 +61,26 @@ const mostraAnimal = async (req, res) => {
 const mostraBairroAnimal = async (req, res) => {
 
     try {
-        const cuidador = await Cuidador.find({bairro: req.query.bairro}&&{animal: req.query.animal})
+        const cuidador = await Cuidador.find({bairro: req.query.bairro}).find({animal: req.query.animal})
         res.status(200).json(cuidador)
     } catch (err){
         return res.status(404).json({message: err.message})
     }
     
+}
+
+const matchBairroAnimal = async (req, res) => {
+
+    try {
+        const tutor = await Tutor.find({bairro: req.query.bairro}).find({animal: req.query.animal})       
+        const cuidador = await Cuidador.find({bairro: req.query.bairro}).find({animal: req.query.animal})       
+        
+        return res.status(200).json({cuidador, tutor})
+        
+    } catch (err) {
+        return res.status(500).json({ message: err.message })
+        
+        }
 }
 
 const mostraBairro = async (req, res) => {
@@ -131,14 +146,13 @@ try {
 
 }
 
-
-
 module.exports = { 
     criaCuidador,
     mostraCuidadores,
     mostraAnimal,
     mostraBairro,
     mostraBairroAnimal,
+    matchBairroAnimal,
     atualizaCuidador,
     deleteCuidador
 }

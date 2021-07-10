@@ -13,6 +13,8 @@ router.get('/animal', controller.mostraAnimal)
 router.get('/bairro', controller.mostraBairro)
 //Retorna a pesquisa por animal e bairro
 router.get('/bairroAnimal', controller.mostraBairroAnimal)
+//Retorna um match entre tutores e cuidadores
+router.get('/match', controller.matchBairroAnimal)
 
 //Atualiza o cadastro do cuidador usando como parametro o CPF
 router.patch('/atualizar', controller.atualizaCuidador)

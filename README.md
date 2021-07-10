@@ -7,7 +7,7 @@
 
 ## Apresentação
 
-Essa API foi desenvolvida para ajudar tutores de animais que precisam se ausentar de casa por determinado período e precisam de alguém que cuide de seus bichos, garantindo a permanência no seu ambiente familiar. Sendo assim tem como objetico facilitar a conexão entre pessoas que precisam do serviço de cuidados de animais e cuidadores que estão disponíveis pelas proximidades. 
+Essa API foi desenvolvida para ajudar tutores de animais que precisam se ausentar de casa por determinado período e precisam de alguém que cuide de seus bichos, garantindo a permanência no seu ambiente familiar. Sendo assim tem como objetivo facilitar a conexão entre pessoas que precisam do serviço de cuidados de animais e cuidadores que estão disponíveis pelas proximidades. 
 
 ## Tecnologias usadas 🐾
 
@@ -88,6 +88,10 @@ url - [https://eucuidopravoce.herokuapp.com/](https://eucuidopravoce.herokuapp.c
     - Rota que retorna os cadastros com o bairro e animal  usado de parâmetro.
     Deve se usar como parâmetro o "bairro" && "animal" que deseja filtrar.
     HTTP 200 OK
+- ***GET - "/match"***
+    - Rota que retorna cuidadore e tutores que possuem animais e bairro em comum.
+    Deve se usar como parâmetro o "bairro" && "animal" que deseja filtrar.
+    HTTP 200 OK    
 - ***POST - "/cadastrar"***
     - Rota que recebe um novo  cadastro adiciona ele a base  e retorna o item criado.HTTP 201 CREATED
 
@@ -169,6 +173,10 @@ url - [https://eucuidopravoce.herokuapp.com/](https://eucuidopravoce.herokuapp.c
     - Rota que retorna os cadastros com o bairro usado de parâmetro.
     Deve se usar como parâmetro o "bairro" que deseja no retorno(Damas, Montese...).
     HTTP 200 OK
+- ***GET - "/match"***
+    - Rota que retorna tutores e cuidadores que possuem animais e bairro em comum.
+    Deve se usar como parâmetro o "bairro" && "animal" que deseja filtrar.
+    HTTP 200 OK     
 - ***POST - "/cadastrar"***
     - Rota que recebe uma novo cadastro e adiciona ele a base  e retorna o item criado.
     HTTP 201 CREATED

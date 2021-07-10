@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Tutor = require('../models/tutorSchema')
+const Cuidador = require('../models/cuidadorSchema')
 
  
 const criaTutor = async (req, res) => {
@@ -70,6 +71,21 @@ const mostraBairro = async (req, res) => {
     
 }
 
+
+const matchBairroAnimal = async (req, res) => {
+
+    try {
+        const tutor = await Tutor.find({bairro: req.query.bairro}).find({animal: req.query.animal})       
+        const cuidador = await Cuidador.find({bairro: req.query.bairro}).find({animal: req.query.animal})       
+        
+        return res.status(200).json({tutor, cuidador})
+        
+    } catch (err) {
+        return res.status(500).json({ message: err.message })
+        
+        }
+}
+
 const atualizaTutor = async (req, res)=> {
     const encontraTutor = await Tutor.findOne({cpf: req.query.cpf})
     if(encontraTutor == null) {
@@ -126,6 +142,7 @@ module.exports = {
     mostraTutores,
     mostraAnimal,
     mostraBairro,
+    matchBairroAnimal,
     atualizaTutor,
     deleteTutor
 }
