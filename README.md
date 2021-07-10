@@ -89,7 +89,7 @@ url - [https://eucuidopravoce.herokuapp.com/](https://eucuidopravoce.herokuapp.c
     Deve se usar como parâmetro o "bairro" && "animal" que deseja filtrar.
     HTTP 200 OK
 - ***GET - "/match"***
-    - Rota que retorna cuidadore e tutores que possuem animais e bairro em comum.
+    - Rota que retorna cuidadores e tutores que possuem animais e bairro em comum.
     Deve se usar como parâmetro o "bairro" && "animal" que deseja filtrar.
     HTTP 200 OK    
 - ***POST - "/cadastrar"***
